@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="14A389" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="List" representedClassName="List" syncable="YES">
+        <attribute name="listDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="listImageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="listName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ListItem" inverseName="whoTake" inverseEntity="ListItem" syncable="YES"/>
+    </entity>
+    <entity name="ListItem" representedClassName="ListItem" syncable="YES">
+        <attribute name="itemDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="itemDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemIsRemind" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="itemName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="itemNotificationID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="itemPhotoID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="whoTake" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="items" inverseEntity="List" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="List" positionX="-423" positionY="-12" width="128" height="103"/>
+        <element name="ListItem" positionX="-117" positionY="-12" width="128" height="148"/>
+    </elements>
+</model>
